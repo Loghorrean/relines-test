@@ -1,4 +1,5 @@
 export {between} from "./between";
+export {chunkArray} from "./chunkArray";
 export {cn} from "./cn";
 export {compareObjects} from "./compareObjects";
 export {debounce} from "./debounce";
@@ -6,8 +7,5 @@ export {isValueEmpty} from "./isValueEmpty";
 export {isIterable} from "./isIterable";
 export {isNotEmpty} from "./isNotEmpty";
 export {isPrimitive} from "./isPrimitive";
-export {invariant} from "./invariant";
 export {resultIf} from "./resultIf";
-export {sleep} from "./sleep";
 export * from "./strings";
-export {throttle} from "./throttle";

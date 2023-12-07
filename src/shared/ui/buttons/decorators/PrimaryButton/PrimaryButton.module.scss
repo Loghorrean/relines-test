@@ -1,0 +1,54 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/variables" as v;
+
+.primary_button {
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    line-height: 1.125rem;
+    &___black {
+        background-color: var(--dark-background-color);
+        color: var(--white-color);
+    }
+    &___white {
+        background-color: var(--white-color);
+        color: var(--font-dark-color);
+    }
+    &___blue {
+        background-color: var(--primary-blue-color);
+        color: var(--white-color);
+        &:hover,
+        &:focus {
+            background-color: var(--primary-blue-color-faded);
+        }
+        &:active {
+            background-color: var(--primary-blue-color-active);
+        }
+        &[disabled="true"] {
+            background-color: var(--primary-blue-color-disabled);
+        }
+    }
+    &___red {
+        background-color: var(--red-color);
+        color: var(--white-color);
+    }
+    &[disabled=""] {
+        color: var(--white-color);
+        background-color: var(--primary-blue-color-disabled);
+    }
+    &___wide {
+        width: 100%;
+    }
+    &___centered {
+        justify-content: center;
+    }
+    &___arrow {
+        padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+    }
+}

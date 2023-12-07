@@ -1,0 +1,47 @@
+@use "src/shared/styles/mixins" as m;
+@use "src/shared/styles/mixins" as mm;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1;
+    color: var(--text-dark-primary-color);
+    font-weight: 400;
+    overflow-x: hidden;
+    @include mm.useInterFont;
+}
+
+::selection {
+    background-color: var(--primary-blue-color);
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-dark-color);
+}
+
+ul,
+ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+image {
+    max-width: 100%;
+}

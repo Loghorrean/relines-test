@@ -1,0 +1,8 @@
+.app {
+  height: 100dvh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 20rem minmax(10px, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem 2rem;
+}

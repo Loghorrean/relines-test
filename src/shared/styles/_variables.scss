@@ -1,0 +1,50 @@
+$white-color: #fff;
+$black-color: #000;
+$text-dark-primary-color: #262b39;
+$text-dark-secondary-color: #5e6475;
+$font-dark-color: #212226;
+$dark-background-color: #292929;
+$dark-background-color-active: #1f2023b2;
+$medium-dark-background-color: #404043;
+$font-secondary-gray-color: #828282;
+$main-background-color: #4e4e4e;
+$gray-background-color: #f0f2f8;
+$selected-option-color: #f0f0f0;
+$additional-text-color: #aeb0b7;
+$primary-blue-color: #004aff;
+$primary-blue-color-faded: #005a99;
+$primary-blue-color-accent: #005cb3;
+$primary-blue-color-disabled: #5c97ce;
+$stroke-gray-primary-color: #e8eaed;
+$gray-primary-color: #99a3bd;
+$red-color: #cc1719;
+$green-color: #61c454;
+$green-color-darker: #58a942;
+
+$container-breakpoints: (
+        "tablet": 48em,
+        "mobile": 28.125em,
+);
+
+$letter-spacing-1: -0.01em;
+$letter-spacing-2: -0.02em;
+$letter-spacing-3: -0.03em;
+$letter-spacing-4: -0.04em;
+$letter-spacing-5: -0.05em;
+
+$base-block-height: 32.5rem;
+
+$base-block-padding: 8.75rem;
+$base-block-padding-higher: 11.25rem;
+
+$color-error-border: #ffa39e;
+$color-error-background: #fff1f0;
+$color-error-base: #ff4d4f;
+
+$success-color: #52c41a;
+$success-color-bg: #f6ffef;
+$success-color-border: #b7eb8f;
+
+$color-warning-base: #ffbf42;
+$color-warning-bg: #fffbe6;
+$color-warning-border: #ffe58f;

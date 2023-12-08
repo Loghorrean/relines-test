@@ -22,7 +22,6 @@
     transform: translateY(-50%) #{$additionalTransform};
 }
 
-//TODO: CHECK IF MIN SIZES ARE WORKING
 @mixin box($size) {
     width: $size;
     min-width: $size;

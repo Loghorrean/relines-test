@@ -1,17 +1,3 @@
-//TODO: REWORK
-@function splitString($str, $separator: " ") {
-    $arr: ();
-    $index: str-index($str, $separator);
-    @while $index != null {
-        $item: str-slice($str, 1, $index - 1);
-        $arr: append($arr, $item);
-        $str: str-slice($str, $index + 1);
-        $index: str-index($str, $separator);
-    }
-    $arr: append($arr, $str);
-    @return $arr;
-}
-
 @function hexToRgb($hex) {
     @return red($hex), green($hex), blue($hex);
 }

@@ -8,4 +8,5 @@ export {isIterable} from "./isIterable";
 export {isNotEmpty} from "./isNotEmpty";
 export {isPrimitive} from "./isPrimitive";
 export {resultIf} from "./resultIf";
+export {sleep} from "./sleep";
 export * from "./strings";

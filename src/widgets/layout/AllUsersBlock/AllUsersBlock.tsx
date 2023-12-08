@@ -13,14 +13,16 @@ const AllUsersBlock = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const { data, isLoading} = useGetRatedUsersList({ page: currentPage, size: appConfig.usersPerPage });
     const renderContent = useMemo(() => {
-        console.log(data);
         if (isLoading) {
             return <div className={styles.all_users_block__loader_container}>
                 <Loader dark />
             </div>;
         }
         if (isValueEmpty(data)) {
-            return <div>Data is not found. Try again later.</div>;
+            return <p>Data is not found. Try again later.</p>;
+        }
+        if (!data.some(item => !item.wasActive)) {
+            return <p>У вас закончились пользователи. Попробуйте загрузить новых.</p>;
         }
         return <ul className={styles.all_users_block__list}>
             { data.filter(item => item.rating === 0 && !item.wasActive).map(item => <ProjectUserEntry key={item.uid} user={item}>

@@ -1,1 +1,2 @@
-export * from "./useGetRatedUsersList.ts";
+export * from "./useGetRatedUsersList";
+export * from "./useUpdateOneUser";

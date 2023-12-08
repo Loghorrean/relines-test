@@ -1,4 +1,6 @@
+export * from "./BlockProps";
 export * from "./ButtonProps";
+export * from "./ClosableElementProps";
 export * from "./DeepRequired";
 export * from "./HttpHeaders";
 export * from "./Nullable";

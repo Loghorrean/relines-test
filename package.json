@@ -18,6 +18,8 @@
     "sass": "^1.69.5"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.13.3",
+    "@testing-library/react": "^14.1.2",
     "@types/jest": "^29.5.4",
     "@types/node": "18.16.3",
     "@types/react": "^18.2.37",

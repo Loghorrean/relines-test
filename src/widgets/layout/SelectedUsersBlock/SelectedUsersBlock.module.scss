@@ -1,3 +1,27 @@
 .selected_users_block {
-
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 5px 5px rgba(var(--black-color-rgb), 0.3);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(10px, 1fr));
+  grid-template-rows: auto minmax(10px, 1fr);
+  grid-gap: 1.5rem;
+  max-height: 100dvh;
+  overflow: hidden;
+  &__heading {
+    grid-column: 1 / -1;
+  }
+  &__content {
+    padding: 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-height: 100%;
+    overflow: auto;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

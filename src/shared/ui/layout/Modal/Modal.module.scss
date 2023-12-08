@@ -1,0 +1,78 @@
+@use "src/shared/styles/variables" as v;
+@use "src/shared/styles/mixins" as m;
+
+.modal {
+    position: fixed;
+    @include m.centerWithPositioning;
+    z-index: 100;
+    width: calc(min(47rem, calc(100% - 1.5rem)));
+    max-height: 100dvh;
+    overflow-y: scroll;
+    @include m.scrollbarWidth;
+    &__content {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--white-color);
+        border-radius: 2rem;
+        padding-block: 2rem;
+    }
+    &__close {
+        @include m.buttonToLink;
+        @include m.box(1.5rem);
+        @include m.centerWithFlex;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        user-select: none;
+        opacity: 0;
+        background-color: #000000a3;
+        backdrop-filter: blur(15px);
+        z-index: 40;
+        &___enter,
+        &___exit_done {
+            opacity: 0;
+        }
+        &___enter_active {
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+        }
+        &___enter_done,
+        &___exit {
+            opacity: 1;
+        }
+        &___exit_active {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+    }
+    &__screen_reader {
+        display: none;
+    }
+    &___enter,
+    &___exit_done {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10rem);
+    }
+    &___enter_active {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+        transition: all 0.5s;
+    }
+    &___enter_done,
+    &___exit {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    &___exit_active {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10rem);
+        transition: all 0.5s;
+    }
+}

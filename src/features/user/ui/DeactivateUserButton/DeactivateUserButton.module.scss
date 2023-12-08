@@ -1,0 +1,9 @@
+@use "src/shared/styles/mixins" as m;
+
+.deactivate_user_button {
+  @include m.buttonToLink;
+  border: 1px solid var(--black-color);
+  border-radius: 0.75rem;
+  @include m.centerWithFlex;
+  padding: 0.5rem 0.625rem;
+}

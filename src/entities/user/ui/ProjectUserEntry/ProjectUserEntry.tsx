@@ -1,16 +1,19 @@
-import { AllHTMLAttributes, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { ProjectUser } from "@/entities/user/model";
 import styles from "./ProjectUserEntry.module.scss";
-import { cn } from "@/shared/utils";
+import { BlockProps, cn } from "@/shared/utils";
 
-type Props = AllHTMLAttributes<HTMLLIElement> & {
+type Props = BlockProps<HTMLLIElement> & {
     user: ProjectUser;
 }
 
 const ProjectUserEntry = ({ user, children, ...props }: PropsWithChildren<Props>) => {
     return (
         <li className={cn(styles.project_user_entry, props.className)}>
-            { user.first_name } { user.last_name }
+            <span>{ user.first_name } { user.last_name }</span>
+            <div className={styles.project_user_entry__actions}>
+                { children }
+            </div>
         </li>
     );
 }

@@ -1,3 +1,12 @@
-.update_user_rating_block {
+@use "src/shared/styles/mixins" as m;
 
+.update_user_rating_block {
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  &__button {
+    @include m.buttonToLink;
+    @include m.box(1.25rem);
+  }
 }

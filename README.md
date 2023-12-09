@@ -1,5 +1,7 @@
 # Relines test application
 
+Установить библиотеки - yarn.
+
 - Запустить приложение в дев режиме - yarn run dev.
 - Запустить имитацию production - yarn run build, yarn run preview.
 

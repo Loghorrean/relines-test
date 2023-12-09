@@ -1,7 +1,6 @@
 import { waitFor, renderHook } from "@testing-library/react";
 import { useGetRatedUsersMock } from "@/tests/mock/useGetRatedUsersMock.ts";
 import Providers from "@/main/providers/Providers.tsx";
-import * as nock from "nock";
 import { generatePaginatedResponse } from "@/tests/mock/provideMockData.ts";
 import { InfiniteData } from "@tanstack/react-query";
 import { RatedUser } from "@/features/user/model";
@@ -24,15 +23,6 @@ test("Infinite data loading", async () => {
         </Providers>
     );
 
-    const expectation = nock('https://random-data-api.com')
-        .persist()
-        .get('/api/data')
-        .reply(200, (uri) => {
-            const url = new URL(`https://random-data-api.com/api/users/random_user?page=${uri}`);
-            const { page } = Object.fromEntries(url.searchParams);
-            return generatePaginatedResponse(parseInt(page));
-        });
-
     const { result } = renderHook(
         () => useGetRatedUsersMock({ page: 1, size: 5 }),
         { wrapper },
@@ -45,6 +35,4 @@ test("Infinite data loading", async () => {
     const paginatedResponse = await generatePaginatedResponse(1);
 
     expect(data[0].pages).toStrictEqual(paginatedResponse);
-
-    expectation.done();
 });

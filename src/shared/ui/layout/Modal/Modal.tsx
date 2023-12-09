@@ -27,6 +27,7 @@ const Modal = ({ active, onClose, children, ...props }: PropsWithChildren<ModalP
     const value: ModalContextType = {
         onClose: onClose,
     };
+
     return (
         <>
             {domReady &&

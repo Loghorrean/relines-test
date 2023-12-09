@@ -21,7 +21,7 @@ const LoadMoreUsersButton = ({ page, setPage }: Props) => {
     }
     return (
         <PrimaryButton color={PRIMARY_BUTTON_COLOR.BLUE}>
-            <Button onClick={handleLoadMore}>
+            <Button onClick={handleLoadMore} disabled={isFetchingNextPage}>
                 { isFetchingNextPage ? <Loader /> : "Следующая страница" }
             </Button>
         </PrimaryButton>

@@ -4,5 +4,11 @@ export const appConfig = {
     },
     get usersPerPage() {
         return 5;
+    },
+    get leftRatingBorder() {
+        return -4;
+    },
+    get rightRatingBorder() {
+        return 5;
     }
 };

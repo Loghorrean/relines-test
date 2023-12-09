@@ -1,4 +1,4 @@
-import { ObjectValues } from "crowdsoft-utils-lib";
+import { ObjectValues } from "@/shared/utils";
 
 export const ACTION_MESSAGE_TYPE = {
     ERROR: "ERROR",

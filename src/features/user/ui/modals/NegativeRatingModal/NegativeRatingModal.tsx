@@ -8,6 +8,7 @@ import { Button } from "@/shared/ui/buttons";
 import { useActionMessages } from "@/shared/action-messages/store.ts";
 import { ACTION_MESSAGE_TYPE } from "@/shared/action-messages/model/ActionMessage.ts";
 import { useLogger } from "@/shared/logger";
+import { appConfig } from "@/shared/configs/app.ts";
 
 type Props = {
     user: RatedUser;
@@ -31,7 +32,7 @@ const NegativeRatingModal = ({ user }: Props) => {
         log(`Пользователь ${user.username} забанен.`);
     }
     return (
-        <Modal active={user.rating <= -5} onClose={handleClose} className={styles.negative_rating_modal}>
+        <Modal active={user.rating < appConfig.leftRatingBorder} onClose={handleClose} className={styles.negative_rating_modal}>
             <p>Пора забанить { user.username }. Сделать это?</p>
             <div className={styles.negative_rating_modal__actions}>
                 <PrimaryButton color={PRIMARY_BUTTON_COLOR.BLUE}>

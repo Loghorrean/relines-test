@@ -47,7 +47,7 @@ const RefetchUsersListButton = ({ onRefetch }: Props) => {
     }
     return (
         <PrimaryButton color={PRIMARY_BUTTON_COLOR.RED}>
-            <Button onClick={handleRefetch}>
+            <Button onClick={handleRefetch} disabled={isRefetching}>
                 { isRefetching ? <Loader /> : "Обновить список" }
             </Button>
         </PrimaryButton>

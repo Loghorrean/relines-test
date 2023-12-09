@@ -5,6 +5,7 @@ import { useGetRatedUsersList } from "@/features/user/hooks";
 import Loader from "@/shared/ui/loaders/Loader";
 import { Dispatch, SetStateAction } from "react";
 import { useLogger } from "@/shared/logger";
+import { appConfig } from "@/shared/configs/app.ts";
 
 type Props = {
     page: number;
@@ -13,7 +14,7 @@ type Props = {
 
 const LoadMoreUsersButton = ({ page, setPage }: Props) => {
     const { log } = useLogger();
-    const { fetchNextPage, isFetchingNextPage} = useGetRatedUsersList({ page, size: 5 });
+    const { fetchNextPage, isFetchingNextPage} = useGetRatedUsersList({ page, size: appConfig.usersPerPage });
     const handleLoadMore = async () => {
         setPage(page => page + 1);
         await fetchNextPage();
